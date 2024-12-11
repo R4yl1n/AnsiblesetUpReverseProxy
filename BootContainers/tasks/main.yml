@@ -1,3 +1,8 @@
 ---
-  - name: BootContainers
+  - name: Pull ComposeFile
+      shell: git pull https://github.com/R4yl1n/setUpReverseProxy.git
+  
+  - name: run compose file
       shell: docker compose up
+      args:
+        chdir: setUpReverseProxy/ComposeFile

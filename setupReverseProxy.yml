@@ -12,7 +12,7 @@
   pre_tasks:
     - name: install necessary packages
         apt:  
-          name: ["docker.io","docker-compose-plugin"]
+          name: ["docker.io","docker-compose-plugin","git"]
           state:  latest
 
   roles:
