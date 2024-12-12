@@ -1,19 +1,19 @@
----
 - name: setupReverseProxy
   hosts: linux
   become: yes
   remote_user: ubuntu
 
   vars: 
-  varReboot: false
-
-
+    varReboot: false
 
   pre_tasks:
     - name: install necessary packages
-        apt:  
-          name: ["docker.io","docker-compose-plugin","git"]
-          state:  latest
+      apt:
+        name: 
+          - docker.io
+          - docker-compose-plugin
+          - git
+        state: latest
 
   roles:
     - BootContainers
@@ -22,3 +22,4 @@
     - name: reboot all hosts
       reboot:
       when: varReboot is defined and varReboot
+
