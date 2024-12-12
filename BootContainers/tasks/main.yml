@@ -1,14 +1,14 @@
 - name: Pull ComposeFile
   shell: git clone https://github.com/R4yl1n/setUpReverseProxy.git
 
-- name: install docker compose manualy
-  shell: 
-  "DOCKER_CONFIG=${DOCKER_CONFIG:-$HOME/.docker}
-mkdir -p $DOCKER_CONFIG/cli-plugins
-curl -SL https://github.com/docker/compose/releases/download/v2.30.3/docker-compose-linux-x86_64 -o $DOCKER_CONFIG/cli-plugins/docker-compose
-sudo chmod +x /usr/local/lib/docker/cli-plugins/docker-compose"
+- name: Install Docker Compose manually
+  shell: |
+    DOCKER_CONFIG=${DOCKER_CONFIG:-$HOME/.docker}
+    mkdir -p $DOCKER_CONFIG/cli-plugins
+    curl -SL https://github.com/docker/compose/releases/download/v2.30.3/docker-compose-linux-x86_64 -o $DOCKER_CONFIG/cli-plugins/docker-compose
+    sudo chmod +x $DOCKER_CONFIG/cli-plugins/docker-compose
 
-- name: Run compose file
+- name: Run Compose file
   shell: docker compose up
   args:
     chdir: setUpReverseProxy/ComposeFile
