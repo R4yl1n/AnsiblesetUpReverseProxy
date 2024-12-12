@@ -1,6 +1,11 @@
-- name: Pull ComposeFile
+- name: Clone ComposeFile
   shell: git clone https://github.com/R4yl1n/setUpReverseProxy.git
   ignore_errors: true
+
+- name: fetch updates
+  shell: git fetch origin
+  args:
+    chdir: setUpReverseProx/
 
 - name: Install Docker Compose manually
   shell: |
