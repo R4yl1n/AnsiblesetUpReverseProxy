@@ -5,15 +5,22 @@
 
   vars: 
     varReboot: false
+    varCompose_apt_installation: false #enable this one if you want to install compose via apt
 
   pre_tasks:
     - name: install necessary packages
       apt:
         name: 
           - docker.io
-          - docker-compose-plugin
           - git
         state: latest
+
+    - name: install docker compose
+      apt:
+        name:
+          - docker-compose-plugin
+        state: latest
+      when: varCompose_apt_installation is defined and varCompose_apt_installation
 
   roles:
     - BootContainers
