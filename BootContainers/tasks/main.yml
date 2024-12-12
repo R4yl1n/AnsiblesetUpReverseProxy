@@ -9,6 +9,6 @@
     sudo chmod +x $DOCKER_CONFIG/cli-plugins/docker-compose
 
 - name: Run Compose file
-  shell: docker compose up
+  shell: docker compose up -d
   args:
     chdir: setUpReverseProxy/ComposeFile
