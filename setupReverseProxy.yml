@@ -13,6 +13,7 @@
         name: 
           - docker.io
           - git
+          - curl
         state: latest
 
     - name: install docker compose
