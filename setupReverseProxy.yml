@@ -5,6 +5,7 @@
 
   vars: 
     varReboot: false
+    varCompose_Manual_Installation: true #onetime Installation but manualy
     varCompose_apt_installation: false #enable this one if you want to install compose via apt
     varStart_Compose: true #set true to install/Update and run the Compose
     varStop_Compose: false #set true to stop the docker compose
@@ -28,6 +29,7 @@
   roles:
     - {role: BootContainers, when: varStart_Compose is defined and varStart_Compose}
     - {role: StopCompose, when: varStop_Compose is defined and varStop_Compose}
+    - {role: InstallComposeManualy, when: varStop_Compose is defined and varStop_Compose}
 
   post_tasks:
     - name: reboot all hosts
