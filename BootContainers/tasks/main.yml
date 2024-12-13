@@ -3,7 +3,9 @@
   ignore_errors: true
 
 - name: fetch updates
-  shell: git fetch origin
+  shell: |
+    git fetch origin
+    git pull
   args:
     chdir: setUpReverseProx/
 
