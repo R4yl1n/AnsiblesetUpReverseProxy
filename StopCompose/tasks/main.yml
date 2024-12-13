@@ -1,2 +1,4 @@
-- name: Stop Compose 
+- name: Stop the Compose
   shell: docker compose stop
+  args:
+    chdir: setUpReverseProxy/ComposeFile
