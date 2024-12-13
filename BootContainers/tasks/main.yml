@@ -7,7 +7,7 @@
     git fetch origin
     git pull
   args:
-    chdir: setUpReverseProx/
+    chdir: setUpReverseProxy/
 
 - name: Install Docker Compose manually
   shell: |
