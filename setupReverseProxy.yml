@@ -5,8 +5,8 @@
 
   vars: 
     varReboot: false
-    varCompose_Manual_Installation: true #onetime Installation but manualy
-    varCompose_apt_installation: false #enable this one if you want to install compose via apt
+    varCompose_Manual_Installation: false #onetime Installation but manualy
+    varCompose_apt_installation: true #enable this one if you want to install compose via apt
     varStart_Compose: true #set true to install/Update and run the Compose
     varStop_Compose: false #set true to stop the docker compose
 
@@ -21,8 +21,9 @@
 
     - name: install docker compose
       apt:
+        update_cache: yes
         name:
-          - docker-compose-plugin
+          - docker-compose
         state: latest
       when: varCompose_apt_installation is defined and varCompose_apt_installation
 

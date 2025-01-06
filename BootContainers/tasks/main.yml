@@ -1,15 +1,10 @@
 - name: Clone ComposeFile
-  shell: git clone https://github.com/R4yl1n/setUpReverseProxy.git
-  ignore_errors: true
+  copy: 
+    src:  ./ComposeFile
+    dest: /root/
 
-- name: fetch updates
-  shell: |
-    git fetch origin
-    git pull
-  args:
-    chdir: setUpReverseProxy/
 
 - name: Run Compose file
-  shell: docker compose up -d
+  shell: docker-compose up -d
   args:
-    chdir: setUpReverseProxy/ComposeFile
+    chdir: /root/ComposeFile/
