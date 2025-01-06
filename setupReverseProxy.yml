@@ -6,7 +6,7 @@
   vars: 
     varReboot: false
     varCompose_Manual_Installation: false #onetime Installation but manualy
-    varCompose_apt_installation: true #enable this one if you want to install compose via apt
+    varCompose_apt_installation: false #enable this one if you want to install compose via apt
     varStart_Compose: true #set true to install/Update and run the Compose
     varStop_Compose: false #set true to stop the docker compose
 
